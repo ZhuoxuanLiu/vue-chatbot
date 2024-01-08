@@ -15,10 +15,7 @@ Forked from vue bot ui, add single image message support.
 ## Install
 
 ```bash
-npm install vue-chatbot
-
-// or
-yarn add vue-chatbot
+npm install @zhuoxuanliu/vue-chatbot
 ```
 
 ## Usage
