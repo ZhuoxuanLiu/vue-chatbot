@@ -1,6 +1,6 @@
 {
   "name": "@zhuoxuanliu/vue-chatbot",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "Chatbot using Vue.js 2, forked from vue-bot-ui",
   "author": "zhuoxuanliu <zhuoxuanliu98@gmail.com>",
   "main": "dist/vue-chatbot.common.js",
