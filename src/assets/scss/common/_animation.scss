@@ -1,28 +1,28 @@
-.qkb-bot-ui--animate {
+.cb-bot-ui--animate {
   // FadeUp
-  .qkb-fadeUp-enter-active,
-  .qkb-fadeUp-leave-active {
+  .cb-fadeUp-enter-active,
+  .cb-fadeUp-leave-active {
     opacity: 1;
     transform: translate(0, 0);
     transition: opacity .15s linear, transform .2s ease-out;
   }
 
-  .qkb-fadeUp-enter,
-  .qkb-fadeUp-leave-to {
+  .cb-fadeUp-enter,
+  .cb-fadeUp-leave-to {
     transform: translate(0, 20px);
     opacity: 0;
   }
 
   // ScaleUp
-  .qkb-scaleUp-enter-active,
-  .qkb-scaleUp-leave-active {
+  .cb-scaleUp-enter-active,
+  .cb-scaleUp-leave-active {
     opacity: 1;
     transform: scale(1, 1);
     transition: opacity .1s linear, transform .2s ease-out;
   }
 
-  .qkb-scaleUp-enter,
-  .qkb-scaleUp-leave-to {
+  .cb-scaleUp-enter,
+  .cb-scaleUp-leave-to {
     transform: scale(0, 0);
     opacity: 0;
   }
@@ -30,7 +30,7 @@
 
 
 // Typing indicator
-@keyframes qkbJump {
+@keyframes cbJump {
   from {
     transform: translateY(2px);
   }
@@ -41,12 +41,12 @@
 
 $typing-duration: .35s;
 
-.qkb-msg-bubble__typing-indicator {
+.cb-msg-bubble__typing-indicator {
   span,
   &::before,
   &::after {
     transform: translateY(2px);
-    animation: qkbJump ease $typing-duration infinite alternate;
+    animation: cbJump ease $typing-duration infinite alternate;
   }
 
   span {

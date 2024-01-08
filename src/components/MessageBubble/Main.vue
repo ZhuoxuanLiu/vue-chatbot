@@ -1,22 +1,24 @@
 <template lang="pug">
-.qkb-msg-bubble(:class="bubbleClass")
-  .qkb-msg-avatar(v-if="message.agent === 'bot'")
-    .qkb-msg-avatar__img &nbsp;
+.cb-msg-bubble(:class="bubbleClass")
+  .cb-msg-avatar(v-if="message.agent === 'bot'")
+    .cb-msg-avatar__img &nbsp;
   component(
     v-if="componentType",
     :is="componentType",
     :main-data="message"
   )
-  .qkb-msg-bubble__time(v-if="message.createdAt")
+  .cb-msg-bubble__time(v-if="message.createdAt")
     | {{ message.createdAt }}
 </template>
 <script>
 import SingleText from './SingleText'
+import SingleImg from './SingleImg'
 import ButtonOptions from './ButtonOptions'
 
 export default {
   components: {
     SingleText,
+    SingleImg,
     ButtonOptions
   },
 
@@ -29,8 +31,8 @@ export default {
   computed: {
     bubbleClass () {
       return this.message.agent === 'bot'
-        ? 'qkb-msg-bubble--bot'
-        : 'qkb-msg-bubble--user'
+        ? 'cb-msg-bubble--bot'
+        : 'cb-msg-bubble--user'
     },
 
     // Define the message type and return the specific component
@@ -40,6 +42,9 @@ export default {
       switch (this.message.type) {
         case 'button':
           type = 'ButtonOptions'
+          break
+        case 'image':
+          type = 'SingleImg'
           break
         default:
           type = 'SingleText'

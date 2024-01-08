@@ -1,7 +1,7 @@
 <template lang="pug">
-.qkb-board-header
+.cb-board-header
   slot(name="header")
-    .qkb-board-header__title {{ botTitle }}
+    .cb-board-header__title {{ botTitle }}
 </template>
 <script>
 export default {

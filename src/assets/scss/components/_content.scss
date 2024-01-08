@@ -1,21 +1,21 @@
-.qkb-board-content {
+.cb-board-content {
   flex-grow: 1;
   overflow: hidden scroll;
 }
 
-.qkb-board-content__bubbles {
+.cb-board-content__bubbles {
   min-height: 100%;
   padding: 1.5rem 1.25rem 1rem;
 }
 
 // Message Bubble Components
 // TODO: split into single component files
-.qkb-msg-bubble {
+.cb-msg-bubble {
   display: flex;
   position: relative;
 }
 
-.qkb-msg-avatar {
+.cb-msg-avatar {
   flex-grow: 1;
   flex: none;
   position: relative;
@@ -23,7 +23,7 @@
   border-radius: 50%;
 }
 
-.qkb-msg-avatar__img {
+.cb-msg-avatar__img {
   position: absolute;
   top: 0;
   left: 0;
@@ -34,7 +34,7 @@
   background-repeat: no-repeat;
 }
 
-.qkb-msg-bubble__time {
+.cb-msg-bubble__time {
   display: none;
   position: absolute;
   right: 0;
@@ -49,56 +49,64 @@
   opacity: 0;
   transition: opacity linear .1s 1s;
 
-  .qkb-msg-bubble--user & {
+  .cb-msg-bubble--user & {
     display: block;
   }
 }
 
-.qkb-msg-bubble-component {
+.cb-msg-bubble-component {
   font-size: .875rem;
-
+  max-width: 80%;
   &:hover {
-    & ~ .qkb-msg-bubble__time {
+    & ~ .cb-msg-bubble__time {
       opacity: .8;
     }
   }
 }
 
-.qkb-msg-bubble {
+.cb-msg-bubble {
   padding-bottom: 1rem;
 
-  &.qkb-msg-bubble--bot {
-    .qkb-msg-bubble-component {
+  &.cb-msg-bubble--bot {
+    .cb-msg-bubble-component {
       margin-right: 2.5rem;
       margin-left: .5rem;
     }
   }
 
-  &.qkb-msg-bubble--user {
+  &.cb-msg-bubble--user {
     justify-content: flex-end;
 
-    .qkb-msg-bubble-component {
+    .cb-msg-bubble-component {
       margin-left: 5rem;
     }
   }
 }
 
-.qkb-msg-bubble-component__text {
+.cb-msg-bubble-component__text {
   position: relative;
   padding: .75rem 1rem;
   border-radius: 6px;
+  overflow-wrap: break-word;
+  word-wrap: break-all;
 }
 
-.qkb-msg-bubble-component__options-wrapper {
+.cb-msg-bubble-component__img {
+  position: relative;
+  padding: .5rem 0rem;
+  border-radius: 6px;
+}
+
+.cb-msg-bubble-component__options-wrapper {
   display: flex;
   flex-wrap: wrap;
 }
 
-.qkb-mb-button-options__item {
+.cb-mb-button-options__item {
   flex: 0 0 auto;
 }
 
-.qkb-mb-button-options__btn {
+.cb-mb-button-options__btn {
   display: block;
   overflow: hidden;
   position: relative;
@@ -123,7 +131,7 @@
 
 
 // Typing indicator
-.qkb-msg-bubble__typing-indicator {
+.cb-msg-bubble__typing-indicator {
   position: relative;
   min-width: $typing-indicator-size * 3 + 8px;
   opacity: .3;

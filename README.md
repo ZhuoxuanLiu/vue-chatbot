@@ -1,9 +1,9 @@
 
-# Vue Bot UI
+# Vue Chatbot
 
 #### For the one who is finding a customizable chatbot UI.
 
-I build for my private project, but I tried to bring as many options as I think someone need it, so feel free to use it.
+Forked from vue bot ui, add single image message support.
 
 *Demo page is coming soon.*
 
@@ -15,10 +15,10 @@ I build for my private project, but I tried to bring as many options as I think 
 ## Install
 
 ```bash
-npm install vue-bot-ui
+npm install vue-chatbot
 
 // or
-yarn add vue-bot-ui
+yarn add vue-chatbot
 ```
 
 ## Usage
@@ -177,6 +177,19 @@ Current components supported by this package, path to files: `components/Message
 }
 ```
 
+- **SingleImage** - `type: 'image'`
+```javascript
+{
+  agent: 'bot',
+  type: 'image',
+  image: {
+    'base64': '',
+    'url': ''
+  }
+  disableInput: false,
+}
+```
+
 - Other components are coming soon...
 
 
@@ -192,49 +205,7 @@ List of available slots:
 | `botTyping`     | Bot Typing message bubble that contains 3 dots indicator as default. |
 
 
-
-### Not found what your need?
-You can overwrite the CSS by class name. Each type and state has separate class for you to customize.
-
-**Feature request**: Feel free to open an issue to ask for a new feature.
-
-
-## Developers / Build
-```bash
-# Clone repo
-git clone https://github.com/JuzSer/vue-bot-ui
-
-# Install packages
-yarn
-
-# Development & Demo - http://localhost:1901
-yarn serve
-
-# Build main library
-yarn build-bundle
-```
-
-## Todo:
-Many things...
-- ~~Events~~
-- ~~Loading / Typing indicators~~
-- ~~Disable message input on loading, vice versa...~~
-- Properties for `target` of button options
-- Add more message bubble components (video, images,...)
-- Add more events
-- Test
-- Accessibility
-
 ## Thanks
 
-- The icons and images from [FlatIcon](https://www.flaticon.com/)
-- Placeholder image from [Placehold.it](http://placehold.it)
-- Time ago from [date-fns](https://date-fns.org/)
-
-## Contributors
-- Hoang Son Nguyen [@juzser](https://github.com/juzser)
-- Aleksey Morshnev [@enorenio](https://github.com/enorenio)
-- DOANDUYDAT [@DOANDUYDAT](https://github.com/DOANDUYDAT)
-
-
+- vue-bot-ui repo (https://github.com/JuzSer/vue-bot-ui)
 **Thank you!** :tada:

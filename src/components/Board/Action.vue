@@ -1,26 +1,26 @@
 <template lang="pug">
-.qkb-board-action(
+.cb-board-action(
   :class="actionClass"
 )
-  .qkb-board-action__wrapper
-    .qkb-board-action__msg-box
-      input.qkb-board-action__input(
+  .cb-board-action__wrapper
+    .cb-board-action__msg-box
+      input.cb-board-action__input(
         type="text",
         v-model="messageText",
-        ref="qkbMessageInput",
+        ref="cbMessageInput",
         :disabled="inputDisable",
         :placeholder="inputPlaceholder",
         @keydown.enter="sendMessage",
       )
-      .qkb-board-action__disable-text(
+      .cb-board-action__disable-text(
         v-if="inputDisablePlaceholder && inputDisable"
       )
         span {{ inputDisablePlaceholder }}
-    .qkb-board-action__extra
+    .cb-board-action__extra
       slot(name="actions")
-      button.qkb-action-item.qkb-action-item--send(@click="sendMessage")
+      button.cb-action-item.cb-action-item--send(@click="sendMessage")
         slot(name="sendButton")
-          IconSend.qkb-action-icon.qkb-action-icon--send
+          IconSend.cb-action-icon.cb-action-icon--send
 </template>
 <script>
 import IconSend from '../../assets/icons/send.svg'
@@ -56,11 +56,11 @@ export default {
       const actionClasses = []
 
       if (this.inputDisable) {
-        actionClasses.push('qkb-board-action--disabled')
+        actionClasses.push('cb-board-action--disabled')
       }
 
       if (this.messageText) {
-        actionClasses.push('qkb-board-aciton--typing')
+        actionClasses.push('cb-board-aciton--typing')
       }
 
       // TODO: sending
@@ -70,7 +70,7 @@ export default {
   },
 
   mounted () {
-    this.$refs.qkbMessageInput.focus()
+    this.$refs.cbMessageInput.focus()
   },
 
   methods: {

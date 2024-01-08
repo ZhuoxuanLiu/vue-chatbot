@@ -1,9 +1,5 @@
 <template lang="pug">
 #app
-  img(
-    alt="Vue Bot UI",
-    src="./assets/logo.png"
-  )
   VueBotUI(
     :options="botOptions",
     :messages="messageData",
@@ -16,7 +12,7 @@
 </template>
 <script>
 import BotIcon from './assets/icons/bot.png'
-import { VueBotUI } from './vue-bot-ui'
+import { VueBotUI } from './vue-chatbot'
 import { messageService } from './helpers/message'
 
 export default {

@@ -1,9 +1,9 @@
 <template lang="pug">
-.qkb-bot-ui(
+.cb-bot-ui(
   :class="uiClasses"
 )
-  transition(name="qkb-fadeUp")
-    .qkb-board(v-if="botActive")
+  transition(name="cb-fadeUp")
+    .cb-board(v-if="botActive")
       BoardHeader(
         :bot-title="optionsMain.botTitle",
         @close-bot="botToggle"
@@ -18,23 +18,23 @@
         :input-disable-placeholder="optionsMain.inputDisablePlaceholder",
         @msg-send="sendMessage"
       )
-  .qkb-bot-bubble
-    button.qkb-bubble-btn(
+  .cb-bot-bubble
+    button.cb-bubble-btn(
       @click="botToggle"
     )
       slot(name="bubbleButton")
-        transition(name="qkb-scaleUp")
-          BubbleIcon.qkb-bubble-btn-icon(
+        transition(name="cb-scaleUp")
+          BubbleIcon.cb-bubble-btn-icon(
             v-if="!botActive",
             key="1"
           )
-          CloseIcon.qkb-bubble-btn-icon.qkb-bubble-btn-icon--close(
+          CloseIcon.cb-bubble-btn-icon.cb-bubble-btn-icon--close(
             v-else,
             key="2"
           )
   AppStyle(:options="optionsMain")
-  .qkb-preload-image
-    .qkb-msg-avatar__img(v-if="optionsMain.botAvatarImg")
+  .cb-preload-image
+    .cb-msg-avatar__img(v-if="optionsMain.botAvatarImg")
 </template>
 <script>
 import EventBus from '../helpers/event-bus'
@@ -121,7 +121,7 @@ export default {
       let classes = []
 
       if (this.optionsMain.animation) {
-        classes.push('qkb-bot-ui--animate')
+        classes.push('cb-bot-ui--animate')
       }
 
       return classes
