@@ -23,7 +23,7 @@ npm install @zhuoxuanliu/vue-chatbot
 Import & register the component
 
 ```javascript
-import { VueBotUI } from 'vue-bot-ui'
+import { VueBotUI } from 'vue-chatbot'
 
 export default {
   components: {
